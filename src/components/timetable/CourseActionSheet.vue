@@ -18,7 +18,7 @@ const courseTime = computed(() => getCourseTime(courseList.value[0]))
 
 function getCourseTime(item: CourseModel) {
   const { week, start, duration } = item
-  return `Tuần${weekTitle[week - 1]} ${start}-${start + duration - 1}Lễ hội`
+  return `Tuần${weekTitle[week - 1]}${start}-${start + duration - 1}Lễ hội`
 }
 
 function navigateToDetail(courseItem: CourseModel) {

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="vn">
 import type { UNotifyOptions } from '../UNotify/types'
 import type { UToastOptions } from '../UToast/types'
 

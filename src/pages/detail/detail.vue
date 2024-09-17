@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="vn">
 import { onLoad } from '@dcloudio/uni-app'
 import { cloneDeep } from 'lodash-es'
 import type { CourseModel } from '~/stores/course'
@@ -8,7 +8,7 @@ const { setPageConfig } = usePageStore()
 
 const defaultCourse: CourseModel = {
   title: '',
-  location: '课程地点',
+  location: 'Địa điểm',
   week: 1,
   weeks: [1, 3, 5],
   start: 1,
@@ -37,13 +37,13 @@ onLoad((option: any) => {
 })
 
 onShow(() => {
-  setPageConfig({ pageTitle: isUpdate.value ? '编辑课程' : '添加课程', showBackAction: true })
+  setPageConfig({ pageTitle: isUpdate.value ? 'Chỉnh sửa khóa học' : 'Thêm khóa học', showBackAction: true })
 })
 
 function handleDeleteCourseItem(courseIndex: number) {
   uni.showModal({
-    title: '警告',
-    content: '确定删除该时间段的课程吗？',
+    title: 'cảnh báo',
+    content: 'Bạn có chắc chắn muốn xóa khóa học trong khoảng thời gian này không?',
     success: (res) => {
       if (res.confirm)
         courseList.value.splice(courseIndex, 1)
@@ -58,7 +58,7 @@ function handleAddNewTime() {
 function handleSaveCourse() {
   if (!courseTitle.value) {
     uni.showToast({
-      title: '请输入课程名称',
+      title: 'Vui lòng nhập tên khóa học',
       icon: 'none',
     })
     return
@@ -71,8 +71,8 @@ function handleSaveCourse() {
 
   courseStore.setCourseList(courseStore.courseList.concat(courseList.value))
   uni.showModal({
-    title: '提示',
-    content: '保存成功',
+    title: 'gợi ý',
+    content: 'Đã lưu thành công',
     showCancel: false,
   })
 }
@@ -141,8 +141,8 @@ function handleShowTimeActionSheet(clickIndex: number) {
 
 const timeList = [
   ['Ngày trong tuần', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhật'],
-  ['开始节次', '第1节', '第2节', '第3节', '第4节', '第5节', '第6节', '第7节', '第8节', '第9节'],
-  ['持续节次', '持续1节', '持续2节', '持续3节', '持续4节', '持续5节', '持续6节', '持续7节', '持续8节'],
+  ['Bắt đầu', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+  ['Thời gian', '1 Buổi', '2 Buổi', '3 Buổi', '4 Buổi', '5 Buổi', '6 Buổi', '7 Buổi', '8 Buổi'],
 ]
 
 function handleTimeChange(e: any) {
@@ -163,14 +163,14 @@ function handleConfirmTimeActionSheet() {
       <div class="bg-white mb-4 py-1 justify-center items-start dark:bg-#121212">
         <div class="px-4">
           <div class="text-lg">
-            通用信息
+            thông tin chung
           </div>
         </div>
         <div class="flex px-4 justify-start items-center">
           <div class="min-w-14">
-            名称
+            tên
           </div>
-          <input v-model="courseTitle" class="w-full" type="text" placeholder="输入课程名（必填）">
+          <input v-model="courseTitle" class="w-full" type="text" placeholder="Nhập tên khóa học (bắt buộc)">
         </div>
       </div>
 
@@ -178,19 +178,19 @@ function handleConfirmTimeActionSheet() {
         <div class="bg-white flex flex-col mb-4 py-1 gap-2 justify-center dark:bg-#121212">
           <div class="flex px-4 justify-between items-center">
             <div class="text-lg">
-              {{ `时间段${courseIndex + 1}` }}
+              {{ `Khoảng thời gian${courseIndex + 1}` }}
             </div>
             <div class="text-red-500 i-carbon-delete" @click="handleDeleteCourseItem(courseIndex)" />
           </div>
           <div class="flex px-4 justify-start items-center">
             <div class="min-w-14">
-              地点
+              Địa điểm
             </div>
-            <input v-model="courseItem.location" class="w-full" type="text" placeholder="输入上课地点（选填）">
+            <input v-model="courseItem.location" class="w-full" type="text" placeholder="Nhập địa điểm lớp học (tùy chọn)">
           </div>
           <div class="flex px-4 justify-start items-center">
             <div class="min-w-14">
-              周数
+              Số tuần
             </div>
             <div class="w-full" @click="handleShowWeekActionSheet(courseIndex)">
               {{ transformArray2String(courseItem.weeks) }}
@@ -198,10 +198,10 @@ function handleConfirmTimeActionSheet() {
           </div>
           <div class="flex px-4 justify-start items-center">
             <div class="min-w-14">
-              时间
+             thời gian
             </div>
             <div class="w-full" @click="handleShowTimeActionSheet(courseIndex)">
-              {{ `${timeList[0][courseItem.week]} 第${courseItem.start}-${courseItem.start + courseItem.duration - 1}节` }}
+              {{ `${timeList[0][courseItem.week]} ${courseItem.start}-${courseItem.start + courseItem.duration - 1}` }}
             </div>
           </div>
         </div>
@@ -213,13 +213,13 @@ function handleConfirmTimeActionSheet() {
           hover-class="bg-green-600" :hover-stay-time="150" @click="handleAddNewTime"
         >
           <div class="i-carbon-add" />
-          添加其他时间段
+          Thêm một khoảng thời gian khác
         </div>
         <div
           class="flex bg-blue-500 h-12 text-white text-center justify-center items-center"
           hover-class="bg-blue-600" :hover-stay-time="150" @click="handleSaveCourse"
         >
-          保存
+          giữ
         </div>
       </div>
     </div>
@@ -232,9 +232,9 @@ function handleConfirmTimeActionSheet() {
       >
         <div class="flex flex-col py-6 gap-6">
           <div class="flex font-medium text-xl px-4 justify-between items-center">
-            选择上课周
+            Chọn tuần học
             <div class="font-normal text-base text-green-500" @click="handleConfirmWeekActionSheet">
-              确定
+              Chắc chắn
             </div>
           </div>
           <div class="grid p-1 gap-1 grid-cols-5 justify-center items-center">
@@ -253,7 +253,7 @@ function handleConfirmTimeActionSheet() {
           class="flex pb-safe border-t-4 border-gray-200 h-12 text-lg justify-center items-center dark:border-opacity-20"
           hover-class="bg-gray-200 bg-opacity-50" :hover-stay-time="150" @click="showWeekActionSheet = false"
         >
-          关闭
+          đóng cửa
         </div>
       </div>
       <div
@@ -271,9 +271,9 @@ function handleConfirmTimeActionSheet() {
       >
         <div class="flex flex-col py-6 gap-6">
           <div class="flex font-medium text-xl px-4 justify-between items-center">
-            选择上课周
+            Chọn tuần học
             <div class="font-normal text-base text-green-500" @click="handleConfirmTimeActionSheet">
-              确定
+              Chắc chắn
             </div>
           </div>
           <picker-view class="h-40" :value="timeValue" @change="handleTimeChange">
@@ -298,7 +298,7 @@ function handleConfirmTimeActionSheet() {
           class="flex pb-safe border-t-4 border-gray-200 h-12 text-lg justify-center items-center dark:border-opacity-20"
           hover-class="bg-gray-200 bg-opacity-50" :hover-stay-time="150" @click="showTimeActionSheet = false"
         >
-          关闭
+          đóng cửa
         </div>
       </div>
       <div

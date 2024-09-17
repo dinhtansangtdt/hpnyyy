@@ -12,7 +12,7 @@ export interface CourseModel {
   color?: string
 }
 
-export const weekTitle = ['一', '二', '三', '四', '五', '六', '日']
+export const weekTitle = ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ Nhật']
 
 export const courseTimeList = [
   { s: '07:00', e: '7:45' }, { s: '07:45', e: '08:30' },
