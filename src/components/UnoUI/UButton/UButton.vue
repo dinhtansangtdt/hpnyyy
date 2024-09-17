@@ -1,4 +1,4 @@
-<script setup lang="vn">
+<script setup lang="ts">
 interface Props {
   type?: 'default' | 'success' | 'error' | 'warning' | 'primary'
   bg?: string

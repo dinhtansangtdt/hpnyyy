@@ -1,4 +1,4 @@
-<script setup lang="vn">
+<script setup lang="ts">
 import type { UToastOptions, UToastType } from './types'
 
 const { customBarHeight } = storeToRefs(useAppStore())

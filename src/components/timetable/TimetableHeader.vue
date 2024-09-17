@@ -1,4 +1,4 @@
-<script setup lang="vn">
+<script setup lang="ts">
 import { weekTitle } from '~/stores/course'
 
 const {

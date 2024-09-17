@@ -1,4 +1,4 @@
-<script setup lang="vn">
+<script setup lang="ts">
 import { onLoad } from '@dcloudio/uni-app'
 import { cloneDeep } from 'lodash-es'
 import type { CourseModel } from '~/stores/course'
