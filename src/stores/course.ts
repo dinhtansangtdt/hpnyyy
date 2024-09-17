@@ -122,7 +122,7 @@ export const useCourseStore = defineStore(
       dayArray.push(someDate.getDate())
       for (let i = 0; i < 6; i++) {
         someDate.setDate(someDate.getDate() + 1)
-        dayArray.push(someDate.getDate())
+        dayArray.push(someDate.getDate() - 1)
       }
       return dayArray
     })
