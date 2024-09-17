@@ -7,7 +7,7 @@ export default [{ title: 'Sinh hoạt chủ nhiệm', location: 'LT-A15-CS1', we
  {title: 'Mạch điện', location: 'LT-B32-CS1', week: 2, start:6, duration: 4, weeks: [ 5, 6, 7, 8, 9, 10, 11, 12, 13] },
  {title: 'Mạch điện', location: 'LT-B32-CS1', week: 2, start:6, duration: 3, weeks: [ 14] },
 
- {title: 'Giáo dục thể chất', location: 'Sân trường-CS1', week: 3, start: 1, duration: 4, weeks: [11] },
+ {title: 'Giáo dục thể chất', location: 'Sân trường-CS1', week: 3, start: 1, duration: 4, weeks: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11] },
  {title: 'Khí cụ điện', location: 'LT-B31-CS1', week: 3, start: 1, duration: 4, weeks: [14, 15, 16, 17] },
  {title: 'Pháp Luật', location: 'LT-C107-CS4', week: 3, start: 6, duration: 4, weeks: [ 2, 3, 4, 5, 6, 7, 8] },
  {title: 'Pháp Luật', location: 'LT-C107-CS4', week: 3, start: 6, duration: 4, weeks: [ 9] },
