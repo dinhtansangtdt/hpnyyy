@@ -30,7 +30,7 @@ watch(
           :class="originalWeekIndex === weeksIndex ? 'bg-gray-400/50 dark:!bg-op60' : currentWeekIndex === weeksIndex ? 'bg-gray-300 bg-op80 dark:!bg-op20' : ''"
         >
           <div class="text-xs text-center mb-1">
-            {{ `第${weeksIndex + 1}周` }}
+            {{ `$Tuần{weeksIndex + 1}` }}
           </div>
           <div class="h-10 w-10" grid="~ flow-col cols-5 rows-5">
             <template v-for="(weekWeekTimetable, weekWeekIndex) of weeksTimetable" :key="weekWeekIndex">

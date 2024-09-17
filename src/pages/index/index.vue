@@ -54,7 +54,7 @@ function handleCloseActionSheet() {
             class="flex h-full mx-auto justify-center items-center inline-block text-lg"
             @click="showCourseAction = !showCourseAction"
           >
-            {{ `第${currentWeekIndex + 1}周${!isStart ? '(未开学)' : ''}` }}
+            {{ `Tuần${currentWeekIndex + 1}${!isStart ? '(chưa bắt đầu)' : ''}` }}
             <div
               class="transition-transform duration-300 i-carbon-chevron-up"
               :class="showCourseAction ? 'rotate-180' : 'rotate-0'"

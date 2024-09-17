@@ -18,7 +18,7 @@ const courseTime = computed(() => getCourseTime(courseList.value[0]))
 
 function getCourseTime(item: CourseModel) {
   const { week, start, duration } = item
-  return `星期${weekTitle[week - 1]} 第${start}-${start + duration - 1}节`
+  return `Tuần${weekTitle[week - 1]} ${start}-${start + duration - 1}Lễ hội`
 }
 
 function navigateToDetail(courseItem: CourseModel) {
@@ -70,7 +70,7 @@ function closeActionSheet() {
         class="flex pb-safe h-12" text="center lg dark:!white" b="t-4 gray-200 dark:op-20" justify-center
         items-center hover-class="bg-gray-200 bg-opacity-50" :hover-stay-time="150" @click="closeActionSheet"
       >
-        关闭
+        Nghĩ
       </div>
     </div>
     <div
