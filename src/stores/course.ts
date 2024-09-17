@@ -120,8 +120,9 @@ export const useCourseStore = defineStore(
       someDate.setDate(someDate.getDate() + weekIndex * 7)
       const dayArray: number[] = []
       dayArray.push(someDate.getDate())
+      someDate.setDate(someDate.getDate() - 1)
       for (let i = 0; i < 6; i++) {
-        someDate.setDate(someDate.getDate())
+        someDate.setDate(someDate.getDate() + 1)
         dayArray.push(someDate.getDate())
       }
       return dayArray
