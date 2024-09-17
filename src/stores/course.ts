@@ -55,7 +55,7 @@ export const useCourseStore = defineStore(
       isStart.value = days > 0
       const week = Math.floor(days / (1000 * 60 * 60 * 24 * 7))
       originalWeekIndex.value = week < 0 ? 0 : week
-      setCurrentWeekIndex(originalWeekIndex.value)
+      setCurrentWeekIndex(originalWeekIndex.value - 1)
     }
 
     /**
@@ -68,7 +68,7 @@ export const useCourseStore = defineStore(
       // change current month
       const someDate = new Date(startDate.value)
       someDate.setDate(someDate.getDate() + weekIndex * 7)
-      currentMonth.value = someDate.getMonth()
+      currentMonth.value = someDate.getMonth() + 1
     }
 
     /**
