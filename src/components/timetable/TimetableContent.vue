@@ -136,7 +136,7 @@ function getCoursePosition(item: CourseModel) {
       :class="originalWeekIndex !== currentWeekIndex ? 'right-0' : '-right-full'"
       @click="setCurrentWeekIndex(originalWeekIndex)"
     >
-      Quay lại tuần sau
+      Quay lại tuần này
     </div>
   </div>
 </template>
