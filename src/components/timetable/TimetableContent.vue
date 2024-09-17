@@ -76,11 +76,12 @@ function handleTouchEnd() {
  * get course position
  * @param item course item
  * @returns css style
+
  */
 function getCoursePosition(item: CourseModel) {
   return {
     'grid-row': `${item.start} / ${item.start + item.duration}`,
-    'grid-column': `${item.week + 1} / ${item.week + 1 + 1}`,
+    'grid-column': `${item.week + 1} / ${item.week + 1}`,
   }
 }
 </script>
