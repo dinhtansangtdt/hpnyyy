@@ -51,7 +51,7 @@ export const useCourseStore = defineStore(
      */
     function setStartDay(someDate: string | Date) {
       startDate.value = new Date(someDate)
-      const days = new Date().getTime() - startDate.value.getTime()
+      const days = new Date().getTime() - startDate.value.getTime() - 1
       isStart.value = days > 0
       const week = Math.floor(days / (1000 * 60 * 60 * 24 * 7))
       originalWeekIndex.value = week < 0 ? 0 : week
@@ -119,7 +119,6 @@ export const useCourseStore = defineStore(
       const someDate = new Date(startDate.value)
       someDate.setDate(someDate.getDate() + weekIndex * 7)
       const dayArray: number[] = []
-      dayArray.push(someDate.getDate())
       someDate.setDate(someDate.getDate() - 1)
       for (let i = 0; i < 6; i++) {
         someDate.setDate(someDate.getDate() + 1)
